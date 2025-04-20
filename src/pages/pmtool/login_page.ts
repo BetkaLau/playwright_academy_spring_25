@@ -1,5 +1,6 @@
 import { type Locator, type Page } from "@playwright/test";
 import { DashboardPage } from "./dashboard_page.ts";
+import { LostPasswordPage } from "./lost_password_page.ts";
 
 export class LoginPage {
   // 1. Identifikace prvků a dalších properties
@@ -50,5 +51,10 @@ export class LoginPage {
     await this.typePassword(password);
     await this.clickLogin();
     return new DashboardPage(this.page);
+  }
+
+  async clickPasswordForgotten(): Promise<LostPasswordPage> {
+    await this.passwordForgottenAnchor.click();
+    return new LostPasswordPage(this.page);
   }
 }

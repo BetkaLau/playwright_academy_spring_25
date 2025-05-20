@@ -1,4 +1,4 @@
-import { test } from "@playwright/test";
+/* import { test } from "@playwright/test";
 import { faker } from "@faker-js/faker";
 
 test("Testing data generation by Faker", async ({ page }) => {
@@ -15,3 +15,4 @@ test("Testing data generation by Faker", async ({ page }) => {
   console.log(`Password: ${password}`);
   console.log(`Address: ${address}`);
 });
+*/

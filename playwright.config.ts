@@ -29,9 +29,16 @@ export default defineConfig({
     // baseURL: 'http://127.0.0.1:3000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: "on-first-retry",
+    trace: "retain-on-failure",
+    actionTimeout: 10 * 1000, // ? Timeout - časový limit akcí jako je například click()
+    navigationTimeout: 30 * 1000, // ? Časový limit pro otvírání stránky (page.goto())
+    screenshot: "only-on-failure",
+    video: "retain-on-failure", // ? Bývá často důvodem zpomalení testů. Pokud testy běží pomalu, je dobré ho úplně vypnout
   },
-
+  expect: {
+    timeout: 10 * 1000, // ? Časový limit pro asserty
+  },
+  timeout: 5 * 60 * 1000, // ? Časový limit pro celý běh testu: 5 minut (5 * 60 * 1000 = 300000)
   /* Configure projects for major browsers */
   projects: [
     {

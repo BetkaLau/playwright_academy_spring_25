@@ -1,6 +1,7 @@
 import { FrameLocator, Locator, Page } from "@playwright/test";
-import { ProjectTasksPage } from "./project_tasks_page.ts";
+
 import { ProjectsPage } from "../projects_page.ts";
+import { ProjectTasksPage } from "./project_tasks_page.ts";
 
 export class CreateNewProjectModal {
   readonly page: Page;
